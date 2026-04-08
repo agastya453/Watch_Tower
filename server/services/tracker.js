@@ -91,7 +91,7 @@ const checkWebsite = async (site) => {
 };
 
 const startTracker = () => {
-    cron.schedule('*/5 * * * *', async () => {
+    cron.schedule('* * * * *', async () => {
         console.log(`[Scheduler] Running tracker job at ${new Date().toISOString()}`);
 
         try {
