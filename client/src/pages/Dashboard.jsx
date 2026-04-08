@@ -14,7 +14,7 @@ export default function Dashboard() {
 
   const fetchSites = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/sites');
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/sites`);
       setSites(data);
     } catch (e) {
       console.error(e);

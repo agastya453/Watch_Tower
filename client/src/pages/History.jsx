@@ -12,7 +12,7 @@ export default function History() {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/history/${id}`);
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/history/${id}`);
         setHistory(data);
       } catch (e) {
         console.error(e);

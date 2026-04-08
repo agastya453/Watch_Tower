@@ -17,7 +17,7 @@ export default function Landing() {
     setLoading(true);
     setError('');
     try {
-      await axios.post('http://localhost:5000/api/track', { url });
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/track`, { url });
       navigate('/dashboard');
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to track URL');
