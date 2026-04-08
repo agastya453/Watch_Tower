@@ -14,7 +14,7 @@ export default function Dashboard() {
 
   const fetchSites = async () => {
     try {
-      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/sites`);
+      const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/sites`);
       setSites(data);
     } catch (e) {
       console.error(e);
@@ -66,7 +66,7 @@ export default function Dashboard() {
             <h3 className="font-medium text-lg text-gray-900 truncate mb-1" title={site.url}>
               {site.url.replace(/^https?:\/\/(www\.)?/, '')}
             </h3>
-            
+
             <div className="flex items-center text-xs text-gray-500 gap-1 mb-8">
               <Clock size={12} />
               <span>Checked {new Date(site.last_checked || site.created_at).toLocaleString()}</span>
@@ -82,9 +82,9 @@ export default function Dashboard() {
           </motion.div>
         ))}
         {sites.length === 0 && (
-           <div className="col-span-full text-center py-20 text-gray-500 glass rounded-3xl">
-             No trackers added yet.
-           </div>
+          <div className="col-span-full text-center py-20 text-gray-500 glass rounded-3xl">
+            No trackers added yet.
+          </div>
         )}
       </div>
     </div>
