@@ -13,11 +13,11 @@ export default function Landing() {
   const handleTrack = async (e) => {
     e.preventDefault();
     if (!url) return;
-    
+
     setLoading(true);
     setError('');
     try {
-      await axios.post(`${import.meta.env.VITE_API_URL}/api/track`, { url });
+      await axios.post(`${import.meta.env.VITE_API_URL}/track`, { url });
       navigate('/dashboard');
     } catch (err) {
       setError(err.response?.data?.error || 'Failed to track URL');
