@@ -106,7 +106,7 @@ export default function History() {
                   {snapshot.change_type !== 'none' && (
                     <Link
                       to={`/diff/${snapshot.id}`}
-                      state={{ snapshot }}
+                      state={{ snapshot, siteId: id }}
                       className="mt-4 inline-flex items-center text-sm font-medium text-apple-blue hover:underline"
                     >
                       <Activity size={14} className="mr-1" />
