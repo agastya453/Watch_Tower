@@ -29,15 +29,17 @@ router.post('/track', async (req, res) => {
             });
         }
 
+        const https = require("https");
+
         const response = await axios.get(url, {
             timeout: 15000,
             maxRedirects: 5,
-            validateStatus: status => status >= 200 && status < 500,
+            httpsAgent: new https.Agent({
+                rejectUnauthorized: false
+            }),
             headers: {
                 "User-Agent":
-                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36",
-                "Accept":
-                    "text/html,application/xhtml+xml"
+                    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
             }
         });
 
