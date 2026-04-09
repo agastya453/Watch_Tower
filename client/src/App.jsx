@@ -16,7 +16,7 @@ function App() {
         </div>
 
         <nav className="glass sticky top-0 z-50 flex justify-between items-center px-8 py-4">
-          <div className="text-xl font-semibold tracking-tight">Focus UI</div>
+          <div className="text-xl font-semibold tracking-tight">Watch Tower</div>
           <div className="flex gap-4">
             <a href="/" className="text-sm font-medium hover:text-apple-blue transition-colors">Home</a>
             <a href="/dashboard" className="text-sm font-medium hover:text-apple-blue transition-colors">Dashboard</a>
